@@ -1,0 +1,53 @@
+{
+  "name": "p2p-share",
+  "homepage": "https://siyon000.github.io/SafeBridge/",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.0.9",
+    "assert": "^2.1.0",
+    "autoprefixer": "^10.4.20",
+    "buffer": "^6.0.3",
+    "file-saver": "^2.0.5",
+    "postcss": "^8.5.3",
+    "process": "^0.11.10",
+    "qrcode.react": "^4.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-dropzone": "^14.3.8",
+    "react-toastify": "^11.0.5",
+    "simple-peer": "^9.11.1",
+    "tailwindcss": "^4.0.9",
+    "uuid": "^11.1.0",
+    "webtorrent": "^2.5.19"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "browserify-fs": "^1.0.0",
+    "crypto-browserify": "^3.12.1",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
+    "rollup-plugin-node-polyfills": "^0.2.1",
+    "stream-browserify": "^3.0.0",
+    "util": "^0.12.5",
+    "vite": "^6.2.0",
+    "vite-compatible-readable-stream": "^3.6.1",
+    "vite-plugin-node-polyfills": "^0.23.0"
+  }
+}
