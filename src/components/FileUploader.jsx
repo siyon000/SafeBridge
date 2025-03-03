@@ -4,7 +4,6 @@ import { useDropzone } from 'react-dropzone';
 const FileUploader = ({ onUpload, isUploading }) => {
     const onDrop = useCallback(acceptedFiles => {
         if (acceptedFiles?.length) {
-            // Add some metadata to the files
             const filesWithMetadata = acceptedFiles.map(file =>
                 Object.assign(file, {
                     id: Math.random().toString(36).substring(2),
@@ -24,12 +23,12 @@ const FileUploader = ({ onUpload, isUploading }) => {
     return (
         <div
             {...getRootProps()}
-            className={`file-drop-zone ${isDragActive ? 'active' : ''} ${isUploading ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={`file-drop-zone border-2 border-dashed border-blue-300 rounded-lg p-4 h-32 sm:h-40 flex items-center justify-center ${isDragActive ? 'bg-blue-50 border-blue-400' : 'bg-gray-50'} ${isUploading ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer hover:bg-blue-50 hover:border-blue-400 transition-colors'}`}
         >
             <input {...getInputProps()} />
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center max-w-full">
                 <svg
-                    className="w-12 h-12 text-blue-500 mb-2"
+                    className="w-8 h-8 sm:w-10 sm:h-10 text-blue-500 mb-2"
                     fill="none"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -41,11 +40,11 @@ const FileUploader = ({ onUpload, isUploading }) => {
                 </svg>
 
                 {isUploading ? (
-                    <p className="text-gray-600">Uploading...</p>
+                    <p className="text-gray-600 text-center text-sm">Uploading...</p>
                 ) : (
                     <>
-                        <p className="font-medium text-blue-600">Drop files here, or click to select</p>
-                        <p className="text-sm text-gray-500 mt-1">Upload multiple files at once</p>
+                        <p className="font-medium text-blue-600 text-center text-xs sm:text-sm">Drop files here, or click to select</p>
+                        <p className="text-xs text-gray-500 mt-1 text-center">Upload multiple files at once</p>
                     </>
                 )}
             </div>

@@ -16,21 +16,23 @@ const ShareLink = ({ link }) => {
 
     return (
         <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-            <div className="flex items-center justify-between">
-                <div className="truncate mr-2 text-sm font-mono bg-white rounded px-2 py-1 border border-gray-200 flex-1">
-                    {link}
+            <div className="flex flex-col space-y-2">
+                <div className="relative">
+                    <div className="bg-white rounded px-3 py-2 border border-gray-200 w-full overflow-hidden">
+                        <p className="truncate text-sm font-mono break-all" title={link}>
+                            {link}
+                        </p>
+                    </div>
                 </div>
                 <button
                     onClick={copyToClipboard}
-                    className={`ml-2 px-3 py-1 rounded transition-colors ${copied
-                        ? 'bg-green-500 text-white'
-                        : 'bg-blue-500 hover:bg-blue-600 text-white'
+                    className={`px-4 py-2 rounded transition-colors text-white w-full ${copied ? 'bg-green-500' : 'bg-blue-500 hover:bg-blue-600'
                         }`}
                 >
-                    {copied ? 'Copied!' : 'Copy'}
+                    {copied ? 'Copied!' : 'Copy Link'}
                 </button>
             </div>
-            <p className="text-sm text-gray-600 mt-2">
+            <p className="text-sm text-gray-600 mt-3">
                 Share this link with the recipient to allow them to download the files
             </p>
         </div>
