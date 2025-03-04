@@ -1,4 +1,3 @@
-P2P File Sharing App with QR Code 
 
 🚀 Introduction
 
