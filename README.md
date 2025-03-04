@@ -1,12 +1,19 @@
-# React + Vite
+P2P File Sharing App with QR Code 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Introduction
 
-Currently, two official plugins are available:
+This is Peer-to-Peer (P2P) file-sharing application that allows users to share files directly without server storage. It utilizes WebRTC & WebTorrent for direct file transfer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🎯 Features
 
-## Expanding the ESLint configuration
+✅ QR Code Link Sharing – Easily share file download links via QR codes 📷
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+✅ Real-Time Status Updates – Notifications for uploads/downloads 🔔
+
+✅ No Server Storage – Fully P2P, ensuring privacy 🔒
+
+🏗 Tech Stack
+
+Frontend: React + TailwindCSS (For a responsive and beautiful UI)
+
+P2P File Sharing: WebRTC + WebTorrent (For direct peer-to-peer transfers)
