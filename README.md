@@ -1,5 +1,5 @@
 
-🚀 Introduction
+🚀 SafeBridge
 
 This is Peer-to-Peer (P2P) file-sharing application that allows users to share files directly without server storage. It utilizes WebRTC & WebTorrent for direct file transfer.
 
