@@ -29,7 +29,7 @@ const Header = ({ connectionStatus = 'initializing' }) => {
         seeding: {
             color: 'bg-green-400',
             text: 'Sharing Files',
-            description: 'Your files are available to download',
+            description: 'Files ready for download',
             icon: 'upload'
         },
         failed: {
@@ -105,45 +105,48 @@ const Header = ({ connectionStatus = 'initializing' }) => {
     };
 
     return (
-        <header className="bg-blue-600 text-white shadow-md">
+        <header className="bg-gray-900 text-white shadow-lg border-b border-gray-800">
             <div className="max-w-6xl mx-auto px-4 py-3">
                 <div className="flex items-center justify-between">
                     {/* Logo and title section */}
                     <div className="flex items-center">
-                        <div>
+                        <div className="flex items-center">
+                            <svg className="w-8 h-8 mr-2 text-blue-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 4.75L4.75 8.5L12 12.25L19.25 8.5L12 4.75Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M4.75 13.5L12 17.25L19.25 13.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
                             <h1 className="text-xl font-bold">SafeBridge</h1>
-                            <p className="text-blue-200 text-sm">Secure peer-to-peer file sharing</p>
                         </div>
                     </div>
 
                     {/* Status indicator - more compact on large screens */}
-                    <div className={`px-3 py-2 rounded-lg flex items-center space-x-2 shadow-sm ${status.color.replace('bg-', 'bg-opacity-20 text-')}`}>
+                    <div className={`px-3 py-2 rounded-lg flex items-center space-x-2`}>
                         <div className={`flex-shrink-0 p-1 rounded-full ${status.color} shadow flex items-center justify-center`}>
                             {renderIcon(status.icon)}
                         </div>
                         <div>
                             <p className="font-medium text-sm">{status.text}</p>
-                            <p className="text-xs opacity-90">{status.description}</p>
+                            <p className="text-xs text-gray-400">{status.description}</p>
                         </div>
                     </div>
                 </div>
 
                 {/* Linear progress indicator for actionable states */}
                 {['connecting', 'initializing'].includes(connectionStatus) && (
-                    <div className="w-full h-1 bg-blue-700 mt-3 overflow-hidden rounded">
-                        <div className="h-1 bg-blue-300 animate-pulse-x" style={{ width: '30%' }}></div>
+                    <div className="w-full h-1 bg-gray-800 mt-3 overflow-hidden rounded">
+                        <div className="h-1 bg-blue-600 animate-pulse-x" style={{ width: '30%' }}></div>
                     </div>
                 )}
 
                 {/* Connection tips for important states */}
                 {connectionStatus === 'connecting' && (
-                    <div className="bg-blue-700 bg-opacity-50 text-sm p-2 mt-3 rounded text-center">
+                    <div className="bg-gray-800 text-sm p-2 mt-3 rounded text-center text-gray-300">
                         Connecting to peer... This might take a moment depending on network conditions.
                     </div>
                 )}
 
                 {connectionStatus === 'failed' && (
-                    <div className="bg-red-700 bg-opacity-50 text-sm p-2 mt-3 rounded text-center">
+                    <div className="bg-red-900 bg-opacity-50 text-sm p-2 mt-3 rounded text-center text-gray-200">
                         Connection failed. The sender may be offline or behind a restrictive firewall.
                     </div>
                 )}

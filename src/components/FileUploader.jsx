@@ -23,7 +23,9 @@ const FileUploader = ({ onUpload, isUploading }) => {
     return (
         <div
             {...getRootProps()}
-            className={`file-drop-zone border-2 border-dashed border-blue-300 rounded-lg p-4 h-32 sm:h-40 flex items-center justify-center ${isDragActive ? 'bg-blue-50 border-blue-400' : 'bg-gray-50'} ${isUploading ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer hover:bg-blue-50 hover:border-blue-400 transition-colors'}`}
+            className={`file-drop-zone border-2 border-dashed border-gray-600 rounded-lg p-4 h-32 sm:h-40 flex items-center justify-center ${isDragActive ? 'bg-gray-700 border-blue-500' : 'bg-gray-800'
+                } ${isUploading ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer hover:bg-gray-700 hover:border-blue-500 transition-colors'
+                }`}
         >
             <input {...getInputProps()} />
             <div className="flex flex-col items-center max-w-full">
@@ -40,11 +42,11 @@ const FileUploader = ({ onUpload, isUploading }) => {
                 </svg>
 
                 {isUploading ? (
-                    <p className="text-gray-600 text-center text-sm">Uploading...</p>
+                    <p className="text-gray-400 text-center text-sm">Uploading...</p>
                 ) : (
                     <>
-                        <p className="font-medium text-blue-600 text-center text-xs sm:text-sm">Drop files here, or click to select</p>
-                        <p className="text-xs text-gray-500 mt-1 text-center">Upload multiple files at once</p>
+                        <p className="font-medium text-blue-400 text-center text-xs sm:text-sm">Drop files here, or click to select</p>
+                        {/* <p className="text-xs text-gray-400 mt-1 text-center">Upload multiple files at once</p> */}
                     </>
                 )}
             </div>

@@ -1,1 +1,49 @@
 @import "tailwindcss";
+
+body {
+    background-color: #1a1d2b;
+    color: #e2e8f0;
+}
+
+/* Custom animation for progress bar pulse */
+@keyframes pulseX {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(200%);
+    }
+}
+
+.animate-pulse-x {
+    animation: pulseX 2s infinite;
+}
+
+/* For animation delays */
+.animation-delay-200 {
+    animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+    animation-delay: 0.4s;
+}
+
+/* Custom scrollbar for the dark theme */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2d3748;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4a5568;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #718096;
+}
